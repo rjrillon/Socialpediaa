@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { setFriends } from "state";
 import FlexBetween from "./FlexBetween";
-import UserImage from "./FlexBetween";
+import UserImage from "./UserImage";
 
 const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
     const dispatch = useDispatch();
@@ -66,9 +66,9 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
                 sx={{ backgroundColor: primaryLight, p:"0.6rem" }}
             >
                 {isFriend ? (
-                    <PersonRemoveOutlined sx={{ color: medium }} />
-                ) : (
                     <PersonRemoveOutlined sx={{ color: primaryDark }} />
+                ) : (
+                    <PersonAddOutlined sx={{ color: primaryDark }} />
                 )}
             </IconButton>
         </FlexBetween>

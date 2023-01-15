@@ -16,13 +16,13 @@ const UserWidget = ({ userId, picturePath }) => {
     const [user, setUser ] = useState(null);
     const { palette } = useTheme();
     const navigate = useNavigate();
-    const token = useSelector((user) => state.token);
+    const token = useSelector((state) => state.token);
     const dark = palette.neutral.dark;
     const medium = palette.neutral.medium;
     const main = palette.neutral.main;
 
     const getUser = async () => {
-        const respone = await fetch (`http://localhost:3001/users/${userId}`, {
+        const response = await fetch (`http://localhost:3001/users/${userId}`, {
             method:"GET",
             headers: { Authorization : `Bearer ${token}`},
         });
@@ -57,7 +57,7 @@ const UserWidget = ({ userId, picturePath }) => {
                 pb="1.1rem"
                 onClick={() => navigate(`/profile/${userId}`)}
             >
-            <FlexBetween gap="1.1rem">
+            <FlexBetween gap="1rem">
                 <UserImage image={picturePath}/>
                 <Box>
                     <Typography
@@ -67,8 +67,8 @@ const UserWidget = ({ userId, picturePath }) => {
                         sx={{
                             "&:hover": {
                                 color:palette.primary.light,
-                                cursor:"pointer"
-                            }
+                                cursor:"pointer",
+                            },
                         }}>
                             {firstName} {lastName}
                         </Typography>
@@ -146,7 +146,7 @@ const UserWidget = ({ userId, picturePath }) => {
                 </FlexBetween>
             </Box>
         </WidgetWrapper>
-    )
+    );
 };
 
 export default UserWidget;

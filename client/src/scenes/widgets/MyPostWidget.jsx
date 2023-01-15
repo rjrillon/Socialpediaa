@@ -54,7 +54,7 @@ const MyPostWidget = ({ picturePath }) => {
         const posts = await response.json();
         dispatch(setPosts({ posts }));
         setImage(null);
-        setPost("")
+        setPost("");
     };
 
     return (
@@ -66,10 +66,10 @@ const MyPostWidget = ({ picturePath }) => {
                     onChange={(e) => setPost(e.target.value)}
                     value={post}
                     sx={{
-                        width:"100px",
+                        width:"100%",
                         backgroundColor: palette.neutral.light,
                         borderRadius: "2rem",
-                        padding: "1rem 2rem"
+                        padding: "1rem 2rem",
                     }}
                 />
             </FlexBetween>
@@ -160,7 +160,7 @@ const MyPostWidget = ({ picturePath }) => {
                     sx={{
                         color: palette.background.alt,
                         backgroundColor: palette.primary.main,
-                        borderRadius: "3rem"
+                        borderRadius: "3rem",
                     }}
                 >
                 POST

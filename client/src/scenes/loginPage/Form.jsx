@@ -90,7 +90,7 @@ const Form = () => {
     const login = async (values, onSubmitProps) => {
         const loggedInResponse = await fetch("http://localhost:3001/auth/login", {
                 method: "POST",
-                headers: { "Content-Type": "applications/json" },
+                headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(values),
         });
         const loggedIn = await loggedInResponse.json();
@@ -200,7 +200,7 @@ const Form = () => {
                                     gridColumn="span 4"
                                     border={`1px solid ${palette.neutral.medium}`}
                                     borderRadius="5px"
-                                    p="1.5rem"
+                                    p="1rem"
                                 >
                                     <Dropzone
                                         acceptedFiles=".jpg,.jpeg,.png"

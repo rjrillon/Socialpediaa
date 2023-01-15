@@ -14,10 +14,10 @@ const FriendListWidget = ({ userId }) => {
     const getFriends = async () => {
         const response = await fetch(`http://localhost:3001/users/${userId}/friends`, {
             method: "GET",
-            headers: { Authorization: `Bearer ${token}`}
+            headers: { Authorization: `Bearer ${token}`},
         });
         const data = await response.json();
-        dispatch(setFriends({ friends: data }))
+        dispatch(setFriends({ friends: data }));
     };
 
     useEffect(() => {
@@ -41,12 +41,12 @@ const FriendListWidget = ({ userId }) => {
                         friendId={friend._id}
                         name={`${friend.firstName} ${friend.lastName}`}
                         subtitle={friend.occupation}
-                        userPicturePath={friend.userPicturePath}
+                        userPicturePath={friend.picturePath}
                     />
                 ))}
             </Box>
         </WidgetWrapper>
-    )
+    );
 };
 
 export default FriendListWidget;

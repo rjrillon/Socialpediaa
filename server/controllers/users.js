@@ -21,7 +21,7 @@ export const getUserFriends = async (req, res) => {
         );
         const formattedFriends = friends.map(
             ({ _id, firstName, lastName, occupation, location, picturePath }) => {
-                return { _id, firstName, lastName, occupation, location, picturePath }
+                return { _id, firstName, lastName, occupation, location, picturePath };
             }
         );
         res.status(200).json(formattedFriends);
@@ -39,7 +39,7 @@ export const addRemoveFriend = async (req, res) => {
 
         //if friend is already part of main users friend id, then remove it
         if (user.friends.includes(friendId)) {
-            user.friends = user.friends.filter((id) => id !== friendId) //copies same arr anytime id !== friendId
+            user.friends = user.friends.filter((id) => id !== friendId); //copies same arr anytime id !== friendId
             friend.friends = friend.friends.filter((id) => id !== id);
         } else {
             // if not already a friend, then friend. do the same for the person being added

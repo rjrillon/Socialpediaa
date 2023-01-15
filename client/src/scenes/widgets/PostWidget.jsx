@@ -1,7 +1,6 @@
 import { 
     ChatBubbleOutlineOutlined, 
     FavoriteBorderOutlined, 
-    FavoriteBorderOutlined, 
     FavoriteOutlined, 
     ShareOutlined,
 } from "@mui/icons-material";
@@ -13,7 +12,7 @@ import {
     useTheme,
 } from "@mui/material";
 import FlexBetween from "components/FlexBetween";
-import Friend from "components/Friend"
+import Friend from "components/Friend";
 import WidgetWrapper from "components/WidgetWrapper";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -47,7 +46,7 @@ const PostWidget = ({
             method: "PATCH",
             headers: {
                 Authorization: `Bearer ${token}`,
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
             },
             body: JSON.stringify({ userId: loggedInUserId }),
         });
@@ -71,7 +70,7 @@ const PostWidget = ({
                     width="100%"
                     height="auto"
                     alt="post"
-                    style={{ borderRadius: "0.75", marginTop: "0.75rem" }}
+                    style={{ borderRadius: "0.75rem", marginTop: "0.75rem" }}
                     src={`http://localhost:3001/assets/${picturePath}`}
                 />
             )}

@@ -8,7 +8,7 @@ import {
     MenuItem,
     FormControl,
     useTheme,
-    useMediaQuery 
+    useMediaQuery, 
 } from "@mui/material";
 import {
     Search,
@@ -18,7 +18,7 @@ import {
     Notifications,
     Help,
     Menu,
-    Close
+    Close,
 } from "@mui/icons-material";
 import { useDispatch, useSelector } from "react-redux";
 import { setMode, setLogout } from "state";
@@ -30,7 +30,7 @@ const Navbar = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const user = useSelector((state) => state.user);
-    const isNonMobileScreens = useMediaQuery("(mid-width: 1000px)");
+    const isNonMobileScreens = useMediaQuery("(min-width: 1000px)");
 
     const theme = useTheme();
     const neutralLight = theme.palette.neutral.light;
@@ -80,7 +80,7 @@ const Navbar = () => {
                 {theme.palette.mode === "dark" ? (
                     <DarkMode sx={{ fontSize: "25px" }} />
                 ) : (
-                    <LightMode sx={{ color:dark, fontSize: "25px" }} />
+                    <LightMode sx={{ color: dark, fontSize: "25px" }} />
                 )}
             </IconButton>
             <Message sx={{ fontSize: "25px"}}/>
@@ -114,12 +114,12 @@ const Navbar = () => {
             </FormControl>
         </FlexBetween>
         ) : (
-        <IconButton
-            onClick={() => setIsMobileMenuToggled(!isMobileMenuToggled)}
-        >
-            <Menu/>
+            <IconButton
+                onClick={() => setIsMobileMenuToggled(!isMobileMenuToggled)}
+            >
+                <Menu/>
 
-        </IconButton>
+            </IconButton>
         )}
 
         {/* MOBILE NAV */}
@@ -131,7 +131,7 @@ const Navbar = () => {
                 height="100%"
                 zIndex="10"
                 maxWidth="500px"
-                midWidth="300px"
+                minWidth="300px"
                 backgroundColor={background}
             >
                 {/* CLOSE ICON */}
@@ -158,7 +158,7 @@ const Navbar = () => {
                         {theme.palette.mode === "dark" ? (
                             <DarkMode sx={{ fontSize: "25px" }} />
                         ) : (
-                            <LightMode sx={{ color:dark, fontSize: "25px" }} />
+                            <LightMode sx={{ color: dark, fontSize: "25px" }} />
                         )}
                     </IconButton>
                     <Message sx={{ fontSize: "25px"}}/>
@@ -177,8 +177,8 @@ const Navbar = () => {
                                     width: "3rem",
                                 },
                                 "& .MuiSelect-select:focus": {
-                                    backgroundColor: neutralLight
-                                }
+                                    backgroundColor: neutralLight,
+                                },
                             }}
                             input={<InputBase/>}
                         >
